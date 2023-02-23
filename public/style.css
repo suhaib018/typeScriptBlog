@@ -9,7 +9,7 @@ body{
   min-height: 2220px
 }
 :root{
-  --primary-color:rgb(39 205 167);
+  --primary-color:rgb(40, 39, 39);
   --secondary-color:aliceblue;
   --hover-color:rgb(13, 176, 138);
 }
@@ -22,10 +22,10 @@ nav {
   gap: 20px;
   background-color:var(--primary-color);
   position: fixed;
-  width: 100%;
-  
+  width: 100%;  
+  z-index: 999;
 }
-img{
+.logo > img{
   border-radius: 50%;
 }
 nav a{
@@ -59,4 +59,41 @@ nav a{
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.hero-section{
+    display: flex;
+    position: relative; 
+    overflow: hidden;
+  }
+
+
+.hero-section img {
+  min-width: 100%;
+  max-height: 700px;
+} 
+
+.input-container {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  box-sizing: border-box;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-indent: 50px;
+}
+
+.input-container i {
+    left: 16px;
+    position: absolute;
+    top: 10px;
+    color: rgb(108, 110, 111);
 }
