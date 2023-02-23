@@ -7,7 +7,7 @@
     <meta name="description" content="Web site created using create-snowpack-app" />
     <link rel="stylesheet" href="/style.css" />
     
-    <script type="module" src="/dist/index.js"></script>
+    <script type="module" src="/dist/index.js" defer></script>
     <title>Blog App</title>
   </head>
   <body>
@@ -18,10 +18,10 @@
             <image src="images/logo.png" width="50px" height="50px"/>
           </div>  
           <div class="link-container">
-          <a href="index.html" class="hover-underline-animation">Home </a>
-          <a href="post-blog.html" class="hover-underline-animation">Post Blog </a>
-          <a href="favourite-blogs.html" class="hover-underline-animation">Favourite Blogs </a>
-          <a href="about.html" class="hover-underline-animation">About Us </a>
+            <a href="index.html" class="hover-underline-animation">Home </a>
+            <a href="post-blog.html" class="hover-underline-animation">Post Blog </a>
+            <a href="favourite-blogs.html" class="hover-underline-animation">Favourite Blogs </a>
+            <a href="about.html" class="hover-underline-animation">About Us </a>
           </div>
         </nav>    
       <!-- END NAVBAR-->
@@ -31,32 +31,28 @@
             <div class = "upload-photo">
               <input type="file"/> 
             </div>
-
             <div class="blog-details">
               <div>
                 <label>
                 Blog title
                 </label>
-                <input type="text"/>
+                <input type="text" id="blog-title"/>
               </div>
-
               <div>
                 <label>
                   Author Name
                 </label>
-                <input type="text"/>
+                <input type="text" id="blog-author"/>
               </div>
-
             </div>
             <div>
-              <textarea  rows="20" cols="102" >
+              <textarea  rows="20" cols="102"  id="blog-body">
               </textarea>
             </div>
             </div>
             <button class = "post-btn">Post</button> 
           </form>
         </div>
-
       <!--Footer -->
         <footer>
           <p>Contact us</p>
