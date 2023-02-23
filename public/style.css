@@ -12,6 +12,7 @@ body{
   --primary-color:rgb(40, 39, 39);
   --secondary-color:aliceblue;
   --hover-color:rgb(13, 176, 138);
+  --btn-color:#6f767a;
 }
 
 nav {
@@ -82,7 +83,7 @@ nav a{
   box-sizing: border-box;
 }
 
-input {
+.input-container input {
   width: 100%;
   padding: 10px;
   border: none;
@@ -96,4 +97,45 @@ input {
     position: absolute;
     top: 10px;
     color: rgb(108, 110, 111);
+}
+
+footer {
+  display: flex;
+  color: var(--secondary-color);
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 0px 40px;
+  height: 80px
+}
+
+.contact-form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-form button{
+  background: var(--btn-color);
+  color: var(--secondary-color);
+  border-style: outset;
+  border-color: var(--btn-color);
+  height: 40px;
+  width: 90px;
+  border-radius: 5px;
+  text-shadow: none;
+  margin-left: 10px;
+  
+}
+
+.contact-form label{
+  margin-right: 5px;
+}
+
+.contact-form input{
+  text-indent: 10px;
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+
 }
