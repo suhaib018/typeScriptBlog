@@ -24,7 +24,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "useDefineForClassFields": true,
-    "noImplicitAny": false
+    "useDefineForClassFields": true
   }
 }
