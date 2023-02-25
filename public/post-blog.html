@@ -40,7 +40,8 @@
       <div class = "post-blog">
           <form class="post-blog-submit">
             <div class = "upload-photo">
-              <input type="file"/> 
+              <input type="file" accept="image/*" id="file"/> 
+              <image src="" alt="null" id="previewImage"/>
             </div>
             <div class="blog-details">
               <div>
@@ -88,6 +89,7 @@
                   <button id="insertUnorderedList" class="option-button">
                     <i class="fa-solid fa-list"></i>
                   </button>
+
                   <!-- Undo/Redo -->
                   <button id="undo" class="option-button">
                     <i class="fa-solid fa-rotate-left"></i>
@@ -135,7 +137,7 @@
                   <select id="fontSize" class="adv-option-button"></select>
                   <!-- Color -->
                   <div class="input-wrapper">
-                    <input type="color" id="foreColor" class="adv-option-button" />
+                    <input type="color" id=" " class="adv-option-button" />
                     <label for="foreColor">Font Color</label>
                   </div>
                   <div class="input-wrapper">
