@@ -56,6 +56,7 @@ const myArray: blogObjet[] = JSON.parse(localStorage.getItem("myBlogs") || "[]")
 
 
 
+
 function searchBlogs() {
  
   const searchQuery = (<HTMLInputElement>document.getElementById("search-blogs")).value;
