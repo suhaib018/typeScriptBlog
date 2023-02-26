@@ -20,7 +20,6 @@ const previewImage =<HTMLImageElement> document.querySelector("#previewImage");
 const imageInput = <HTMLInputElement>document.querySelector("#file");
 const Heading = <HTMLInputElement>document.querySelector("#formatBlock");
 const color = <HTMLInputElement>document.querySelector("#color");
-const highlightColor = <HTMLInputElement>document.querySelector("#backColor");
 const cardContainer = document.querySelector(".blog-card");
 const search = document.getElementById("search-blogs");
 const searchIcon = document.getElementById("search-icon");
@@ -129,7 +128,6 @@ orderList?.addEventListener("click",() => createOrderedList());
 unOrderList?.addEventListener("click",() => createUnOrderedList());
 Heading?.addEventListener("change",() => HeadingHandler());
 color?.addEventListener("change",() => colorHandler());
-highlightColor?.addEventListener("change",() => highlightHandler());
 imageInput?.addEventListener("change",loadImage);
 
 
@@ -171,22 +169,6 @@ function colorHandler() {
   }
 }
 
-
-function highlightHandler() {
-  // Get the selected text
-  const selection = window.getSelection();
-  console.log("color value",color.value);
-  // Check if there is any selected text
-  if (selection && selection.rangeCount > 0) {
-    // Get the selected range
-    const range = selection.getRangeAt(0);
-    // Create a new <span> element to wrap the selected text in
-    const span = document.createElement("span");
-    span.style.background= highlightColor.value;
-    // Wrap the selected text in the <span> element
-    range.surroundContents(span);
-  }
-}
 
 function createOrderedList() {
     // Get the selected text
