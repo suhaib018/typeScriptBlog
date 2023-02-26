@@ -76,31 +76,6 @@ nav a{
   max-height: 700px;
 } 
 
-.input-container {
-  position: absolute;
-  bottom: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
-  box-sizing: border-box;
-}
-
-.input-container input {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  text-indent: 50px;
-}
-
-.input-container i {
-    left: 16px;
-    position: absolute;
-    top: 10px;
-    color: rgb(108, 110, 111);
-}
-
 footer {
   display: flex;
   color: var(--secondary-color);
