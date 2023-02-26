@@ -22,15 +22,17 @@ const Heading = <HTMLInputElement>document.querySelector("#formatBlock");
 const color = <HTMLInputElement>document.querySelector("#color");
 const highlightColor = <HTMLInputElement>document.querySelector("#backColor");
 const cardContainer = document.querySelector(".blog-card");
-const searchFilter =<HTMLInputElement> document.querySelector("#search-blogs")
+const search = document.getElementById("search-blogs");
+const searchIcon = document.getElementById("search-icon");
 
 
-console.log("searchFilter",searchFilter);
 
 
-searchFilter?.addEventListener("click",function(){
-  console.log(`changed ${searchFilter.innerHTML}`);
-})
+
+
+
+
+
 
 type blogObjet = {
   image?:any;
@@ -45,58 +47,49 @@ let blogAuthorChange:string ="";
 let blogBodyChange:string ="";
 let blogImageChange:any;
 let personName:string ="";
-
+let searchedBlog :string = "";
 
 const myArray: blogObjet[] = JSON.parse(localStorage.getItem("myBlogs") || "[]");
 
 
 
-myArray.forEach((blog) => {
+function searchBlogs() {
+ 
+  const searchQuery = (<HTMLInputElement>document.getElementById("search-blogs")).value;
+  searchedBlog = searchQuery; 
+  console.log(`Searching for blogs with query: ${searchedBlog}`);
+}
+
+search?.addEventListener("change",searchBlogs);
+searchIcon?.addEventListener("click",function(){
+  myArray.forEach((blog) => {
+    if(blog.title === searchedBlog || searchedBlog == ""){
   
-
-let cardHeader = document.createElement("div");
-let cardBody = document.createElement("div");
-let image = document.createElement("img");
-let h4Heading = document.createElement("h4");
-let authorName = document.createElement("p");
-
-cardHeader.className ="card-header";
-cardBody.className = "card-body"
-image.src =blog.image;
-h4Heading.innerText = blog.title;
-authorName.innerText = blog.name
-
-cardHeader.appendChild(image);
-cardBody.appendChild(h4Heading);
-cardBody.appendChild(authorName);
-
-cardContainer?.appendChild(cardHeader);
-cardContainer?.appendChild(cardBody);
-
-
-
-// <div class="card-header">
-//           <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
-//         </div>
-//         <div class="card-body">
-//           <span class="tag tag-teal">Technology</span>
-//           <h4>
-//             Why is the Tesla Cybertruck designed the way it
-//             is?
-//           </h4>
-//           <p>
-//             An exploration into the truck's polarising design
-//           </p>
-//           <div class="user">
-//             <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
-//             <div class="user-info">
-//               <h5>July Dec</h5>
-//               <small>2h ago</small>
-//             </div>
-//           </div>
-//         </div>
-
+      let cardHeader = document.createElement("div");
+      let cardBody = document.createElement("div");
+      let image = document.createElement("img");
+      let h4Heading = document.createElement("h4");
+      let authorName = document.createElement("p");
+      
+      cardHeader.className ="card-header";
+      cardBody.className = "card-body"
+      image.src =blog.image;
+      h4Heading.innerText = blog.title;
+      authorName.innerText = blog.name
+      
+      cardHeader.appendChild(image);
+      cardBody.appendChild(h4Heading);
+      cardBody.appendChild(authorName);
+      
+      cardContainer?.appendChild(cardHeader);
+      cardContainer?.appendChild(cardBody);
+    }
+  })
+  searchedBlog == ""  
 })
+
+
+
 
 
 
@@ -116,7 +109,7 @@ function loadImage(){
 
 
 //BLOG EVENTS
-bold.addEventListener("click",() => boldSelection());
+bold?.addEventListener("click",() => boldSelection());
 italick?.addEventListener("click",() => italicizeSelection());
 underLine?.addEventListener("click",() => underLinStyle());
 textStrke?.addEventListener("click",() => lineThrough());
@@ -380,27 +373,25 @@ function italicizeSelection() {
     range.surroundContents(span);
   }
 }
-Name.addEventListener("change",function (){
+Name?.addEventListener("change",function (){
     personName = Name.value;
 })
 
-blogAuthor.addEventListener("change",function (){
+blogAuthor?.addEventListener("change",function (){
   blogAuthorChange = blogAuthor.value;
 })
 
-blogTitle.addEventListener("change",function (){
+blogTitle?.addEventListener("change",function (){
   blogTitleChange = blogTitle.value;
 })
 
-editor.addEventListener("input",function (){
+editor?.addEventListener("input",function (){
     blogBodyChange = editor.innerText;
 })  
 
-console.log("editor",editor.innerText);
-
-  postBtn.addEventListener('submit',function(event){
-      event.preventDefault();
-      blogs.push({image:blogImageChange,name:blogAuthorChange,title:blogTitleChange,body:blogBodyChange});
-      localStorage.setItem("myBlogs",JSON.stringify(blogs));    
-  })
+postBtn?.addEventListener('submit',function(event){
+    event.preventDefault();
+    blogs.push({image:blogImageChange,name:blogAuthorChange,title:blogTitleChange,body:blogBodyChange});
+    localStorage.setItem("myBlogs",JSON.stringify(blogs));    
+})
 
