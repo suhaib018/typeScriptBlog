@@ -24,6 +24,9 @@ const highlightColor = <HTMLInputElement>document.querySelector("#backColor");
 const cardContainer = document.querySelector(".blog-card");
 const search = document.getElementById("search-blogs");
 const searchIcon = document.getElementById("search-icon");
+const cardContainerGrid =document.querySelector(".card-container");
+
+
 
 
 
@@ -62,35 +65,38 @@ function searchBlogs() {
 
 search?.addEventListener("change",searchBlogs);
 searchIcon?.addEventListener("click",function(){
-  myArray.forEach((blog) => {
-    if(blog.title === searchedBlog || searchedBlog == ""){
   
-      let cardHeader = document.createElement("div");
-      let cardBody = document.createElement("div");
-      let image = document.createElement("img");
-      let h4Heading = document.createElement("h4");
-      let authorName = document.createElement("p");
-      
-      cardHeader.className ="card-header";
-      cardBody.className = "card-body"
-      image.src =blog.image;
-      h4Heading.innerText = blog.title;
-      authorName.innerText = blog.name
-      
-      cardHeader.appendChild(image);
-      cardBody.appendChild(h4Heading);
-      cardBody.appendChild(authorName);
-      
-      cardContainer?.appendChild(cardHeader);
-      cardContainer?.appendChild(cardBody);
-    }
-  })
   searchedBlog == ""  
 })
 
 
 
-
+myArray.forEach((blog) => {
+  
+    let cardContainer = document.createElement("div"); // create a separate div for each card container
+    let cardHeader = document.createElement("div");
+    let cardBody = document.createElement("div");
+    let image = document.createElement("img");
+    let h4Heading = document.createElement("h4");
+    let authorName = document.createElement("p");
+  
+    cardContainer.className = "blog-card"; // add a class to the card container
+    cardHeader.className ="card-header";
+    cardBody.className = "card-body"
+    image.src =blog.image;
+    h4Heading.innerText = blog.title;
+    authorName.innerText = blog.name
+  
+    cardHeader.append(image);
+    cardBody.append(h4Heading);
+    cardBody.append(authorName);
+  
+    cardContainer.append(cardHeader); // append header and body to the card container
+    cardContainer.append(cardBody);
+  
+    cardContainerGrid?.append(cardContainer); // append the card container to the grid container
+  
+})
 
 
 function loadImage(){
