@@ -193,7 +193,7 @@ textarea,.blog-details input,#editor{
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-.card {
+.blog-card {
   margin: 10px;
   background-color: #fff;
   border-radius: 10px;

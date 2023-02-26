@@ -32,13 +32,13 @@
             <a href="index.html" class="hover-underline-animation">Home </a>
             <a href="post-blog.html" class="hover-underline-animation">Post Blog </a>
             <a href="favourite-blogs.html" class="hover-underline-animation">Favourite Blogs </a>
-            <a href="about.html" class="hover-underline-animation">About Us </a>
           </div>
         </nav>    
       <!-- END NAVBAR-->
       
       <div class = "post-blog">
-          <form class="post-blog-submit">
+          <form class="post-blog-submit"
+          
             <div class = "upload-photo">
               <input type="file" accept="image/*" id="file"/> 
               <image src="" alt="null" id="previewImage"/>
@@ -97,13 +97,7 @@
                   <button id="redo" class="option-button">
                     <i class="fa-solid fa-rotate-right"></i>
                   </button>
-                  <!-- Link -->
-                  <button id="createLink" class="adv-option-button">
-                    <i class="fa fa-link"></i>
-                  </button>
-                  <button id="unlink" class="option-button">
-                    <i class="fa fa-unlink"></i>
-                  </button>
+                  
                   <!-- Alignment -->
                   <button id="justifyLeft" class="option-button align">
                     <i class="fa-solid fa-align-left"></i>
@@ -114,30 +108,21 @@
                   <button id="justifyRight" class="option-button align">
                     <i class="fa-solid fa-align-right"></i>
                   </button>
-                  <button id="justifyFull" class="option-button align">
-                    <i class="fa-solid fa-align-justify"></i>
-                  </button>
-                  <button id="indent" class="option-button spacing">
-                    <i class="fa-solid fa-indent"></i>
-                  </button>
-                  <button id="outdent" class="option-button spacing">
-                    <i class="fa-solid fa-outdent"></i>
-                  </button>
                   <!-- Headings -->
                   <select id="formatBlock" class="adv-option-button">
-                    <option value="H1">H1</option>
-                    <option value="H2">H2</option>
-                    <option value="H3">H3</option>
-                    <option value="H4">H4</option>
-                    <option value="H5">H5</option>
-                    <option value="H6">H6</option>
+                    <option value="h1">H1</option>
+                    <option value="h2">H2</option>
+                    <option value="h3">H3</option>
+                    <option value="h4">H4</option>
+                    <option value="h5">H5</option>
+                    <option value="h6">H6</option>
                   </select>
                   <!-- Font -->
                   <select id="fontName" class="adv-option-button"></select>
                   <select id="fontSize" class="adv-option-button"></select>
                   <!-- Color -->
                   <div class="input-wrapper">
-                    <input type="color" id=" " class="adv-option-button" />
+                    <input type="color" id="color" class="adv-option-button" />
                     <label for="foreColor">Font Color</label>
                   </div>
                   <div class="input-wrapper">
@@ -147,11 +132,9 @@
                 </div>
                
                 <div id="editor" contenteditable="true">
-
-
                 </div>
                   
-              </div>
+              </div>  
       
             </div>
             </div>
@@ -173,3 +156,14 @@
       
   </body>
 </html>
+
+
+
+ <!-- Link 
+                  <button id="createLink" class="adv-option-button">
+                    <i class="fa fa-link"></i>
+                  </button>
+                  <button id="unlink" class="option-button">
+                    <i class="fa fa-unlink"></i>
+                  </button> 
+ -->
