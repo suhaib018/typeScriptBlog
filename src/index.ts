@@ -37,12 +37,14 @@ let blogImageChange:any;
 let personName:string ="";
 let searchedBlog :string = "";
 const myArray: blogObjet[] = JSON.parse(localStorage.getItem("myBlogs") || "[]");
-
+let image :HTMLImageElement = document.createElement("img");
 myArray.forEach((blog) => {
   
     let cardContainer = document.createElement("div"); 
     let cardHeader = document.createElement("div");
     let cardBody = document.createElement("div");
+    let cardInfo = document.createElement("div");
+    let description = document.createElement("p");
     let image = document.createElement("img");
     let h4Heading = document.createElement("h4");
     let authorName = document.createElement("p");
@@ -53,18 +55,21 @@ myArray.forEach((blog) => {
     image.src =blog.image;
     h4Heading.innerText = blog.title;
     authorName.innerText = blog.name
-  
+    cardInfo.className = "card-description";
+    description.innerText = blog.body;
+    cardInfo.append(description);
     cardHeader.append(image);
     cardBody.append(h4Heading);
     cardBody.append(authorName);
   
     cardContainer.append(cardHeader); 
     cardContainer.append(cardBody);
+    cardContainer.append(cardInfo);
+    cardContainer.append(cardInfo);
   
     cardContainerGrid?.append(cardContainer); 
   
 })
-
 //############ BLOG EVENTS ############
 bold?.addEventListener("click",() => boldSelection());
 italick?.addEventListener("click",() => italicizeSelection());
@@ -89,7 +94,6 @@ function loadImage() : void{
   } else {
     console.log("No file selected");
   }
-    let image :HTMLImageElement = document.createElement("img");
     image.src= URL.createObjectURL(file);
     image.width = 300;
     image.width = 200;
@@ -325,7 +329,7 @@ postBtn?.addEventListener('submit',function(event):void{
     event.preventDefault();
     blogs.push({image:blogImageChange,name:blogAuthorChange,title:blogTitleChange,body:blogBodyChange});
     localStorage.setItem("myBlogs",JSON.stringify(blogs));    
-})
+  })
 contactForm.addEventListener('submit',function (event):void{
   event.preventDefault();
   alert(`Hello ${personName} will contact you soon`);

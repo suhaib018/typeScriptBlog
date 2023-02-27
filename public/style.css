@@ -10,6 +10,7 @@
   --hover-color:rgb(93 91 93);
   --btn-color:#6f767a;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -39,6 +40,9 @@ nav a{
   color:var(--secondary-color);
 }
 
+body{
+  min-height: 1300px;
+}
 .hover-underline-animation::after {
   content: '';
   position: absolute;
@@ -133,6 +137,7 @@ footer {
   justify-content: space-between;
   margin: 20px 0;
 }
+
 .post-btn{
   background: var(--btn-color);
   color: var(--secondary-color);
@@ -167,6 +172,12 @@ textarea,.blog-details input,#editor{
   display: grid;
   grid-template-columns:auto auto auto;
   gap: 20px;
+  padding: 20px 50px;
+}
+.card-description{
+ overflow: scroll;
+ margin: 15px;
+ min-height: fit-content;
 }
 .container {
   display: flex;
@@ -179,7 +190,6 @@ textarea,.blog-details input,#editor{
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  
   overflow: hidden;
   width: 300px;
 }
@@ -190,11 +200,9 @@ textarea,.blog-details input,#editor{
 }
 .card-body {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 20px;
-  min-height: 250px;
 }
 .bold{
   font-weight: bold;
