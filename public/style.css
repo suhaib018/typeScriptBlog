@@ -4,17 +4,12 @@
   box-sizing: border-box;
 }
 
-
-body{
-  /* min-height: 2220px */
-}
 :root{
   --primary-color:rgb(40, 39, 39);
   --secondary-color:aliceblue;
   --hover-color:rgb(93 91 93);
   --btn-color:#6f767a;
 }
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -26,7 +21,6 @@ nav {
   width: 100%;  
   z-index: 999;
   top: 0;
-  /* margin-bottom: 70px; */
 }
 .logo > img{
   border-radius: 50%;
@@ -39,7 +33,6 @@ nav a{
   display: flex;
   gap: 20px;
 }
-
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -69,8 +62,6 @@ nav a{
     position: relative; 
     overflow: hidden;
   }
-
-
 .hero-section img {
   min-width: 100%;
   max-height: 700px;
@@ -79,8 +70,12 @@ nav a{
 #search-icon{
   cursor: pointer;
 }
-
 footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
   display: flex;
   color: var(--secondary-color);
   justify-content: space-between;
@@ -95,7 +90,6 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-
 .contact-form button{
   background: var(--btn-color);
   color: var(--secondary-color);
@@ -106,7 +100,10 @@ footer {
   border-radius: 5px;
   text-shadow: none;
   margin-left: 10px;
-  
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .contact-form label{
@@ -118,9 +115,7 @@ footer {
   height: 40px;
   width: 100%;
   border-radius: 5px;
-
 }
-
 
 .post-blog form{
   gap: 20px;
@@ -143,7 +138,6 @@ footer {
   text-shadow: none;
   margin-left: 10px;
   box-shadow: 0px 0px 11px 2px var(--btn-color);
-
 }
 
 textarea,.blog-details input,#editor{
@@ -155,10 +149,13 @@ textarea,.blog-details input,#editor{
   background-color: #f8f8f8;
   font-size: 16px;
   resize: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 #editor{
   min-height: 400px;
-
 }
 
 .card-container{
@@ -240,10 +237,6 @@ textarea,.blog-details input,#editor{
 .user-info small {
   color: #545d7a;
 }
-
-
-/*  */
-
 
 .options {
   display: flex;
