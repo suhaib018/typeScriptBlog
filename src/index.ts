@@ -19,9 +19,10 @@ const fontColor = <HTMLButtonElement>document.getElementById("foreColor");
 const previewImage =<HTMLImageElement> document.querySelector("#previewImage");
 const imageInput = <HTMLInputElement>document.querySelector("#file");
 const Heading = <HTMLInputElement>document.querySelector("#formatBlock");
-const color = <HTMLInputElement>document.querySelector("#color");
 const cardContainer = document.querySelector(".blog-card");
 const cardContainerGrid =document.querySelector(".card-container");
+const uploadPhotoContainer =document.querySelector(".upload-photo");
+
 type blogObjet = {
   image?:any;
   name:string;
@@ -77,7 +78,7 @@ center?.addEventListener("click",() => justifyCenter());
 orderList?.addEventListener("click",() => createOrderedList());
 unOrderList?.addEventListener("click",() => createUnOrderedList());
 Heading?.addEventListener("change",() => HeadingHandler());
-color?.addEventListener("change",() => colorHandler());
+fontColor?.addEventListener("input",() => colorHandler());
 imageInput?.addEventListener("input",loadImage);
 
 //########## ACTIONS##########
@@ -88,10 +89,13 @@ function loadImage() : void{
   } else {
     console.log("No file selected");
   }
-  if (previewImage){
-    previewImage.src = URL.createObjectURL(file);
-    blogImageChange =  previewImage.src;
-  }
+    let image :HTMLImageElement = document.createElement("img");
+    image.src= URL.createObjectURL(file);
+    image.width = 300;
+    image.width = 200;
+    image.alt = "Image Not Found"
+    uploadPhotoContainer?.append(image);
+    blogImageChange =  image.src;
 }
 function HeadingHandler():void {
   // Get the selected text
@@ -120,7 +124,7 @@ function colorHandler():void {
     const range:Range = selection.getRangeAt(0);
     // Create a new <span> element to wrap the selected text in
     const span:HTMLSpanElement = document.createElement("span");
-    span.style.color= color.value;
+    span.style.color= fontColor.value;
     // Wrap the selected text in the <span> element
     range.surroundContents(span);
   }
@@ -324,5 +328,5 @@ postBtn?.addEventListener('submit',function(event):void{
 })
 contactForm.addEventListener('submit',function (event):void{
   event.preventDefault();
-  alert(`Hello ${personName} will we contact you soon`);
+  alert(`Hello ${personName} will contact you soon`);
 })
